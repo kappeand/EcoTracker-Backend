@@ -2,9 +2,7 @@ package ch.zhaw.ecotracker.entities;
 
 import javax.persistence.*;
 
-@Table(name = "supplier", indexes = {
-        @Index(name = "fk_supplier_address1_idx", columnList = "fk_address")
-})
+@Table(name = "supplier")
 @Entity
 public class Supplier {
     @Id

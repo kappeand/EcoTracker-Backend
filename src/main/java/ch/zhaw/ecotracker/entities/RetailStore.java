@@ -3,9 +3,7 @@ package ch.zhaw.ecotracker.entities;
 import javax.persistence.*;
 import java.util.List;
 
-@Table(name = "retail_store", indexes = {
-        @Index(name = "fk_retail_store_address1_idx", columnList = "fk_address")
-})
+@Table(name = "retail_store")
 @Entity
 public class RetailStore {
     @Id
