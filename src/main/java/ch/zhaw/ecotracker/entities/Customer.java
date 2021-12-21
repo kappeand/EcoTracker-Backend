@@ -11,8 +11,8 @@ public class Customer {
     @Column(name = "id_customer", nullable = false)
     private Integer id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "fk_address", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "fk_address")
     private Address address;
 
     @Column(name = "name", length = 45)

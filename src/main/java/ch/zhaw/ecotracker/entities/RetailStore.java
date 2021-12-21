@@ -11,8 +11,8 @@ public class RetailStore {
     @Column(name = "id_retail_store", nullable = false)
     private Integer id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "fk_address", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "fk_address")
     private Address address;
 
     @Column(name = "store_manager", length = 45)
