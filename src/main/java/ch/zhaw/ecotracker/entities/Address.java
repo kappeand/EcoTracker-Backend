@@ -1,38 +1,60 @@
 package ch.zhaw.ecotracker.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Table(name = "address")
 @Entity
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_address", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "street", length = 45)
+    @Column(name = "street")
     private String street;
 
-    @Column(name = "housenumber")
-    private Integer housenumber;
+    @Column(name = "house_number")
+    private String houseNumber;
 
-    @Column(name = "postalcode")
-    private Integer postalcode;
+    @Column(name = "postal_code")
+    private String postalCode;
 
-    public Integer getPostalcode() {
-        return postalcode;
+    @Column(name = "phone_number")
+    private Integer phoneNumber;
+
+    @Column(name = "email")
+    private String email;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setPostalcode(Integer postalcode) {
-        this.postalcode = postalcode;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Integer getHousenumber() {
-        return housenumber;
+    public Integer getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setHousenumber(Integer housenumber) {
-        this.housenumber = housenumber;
+    public void setPhoneNumber(Integer phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
     public String getStreet() {
