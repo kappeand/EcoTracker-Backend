@@ -8,7 +8,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_address", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "street", length = 45)
     private String street;
@@ -43,11 +43,11 @@ public class Address {
         this.street = street;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }
