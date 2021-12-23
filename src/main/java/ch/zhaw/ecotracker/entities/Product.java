@@ -28,6 +28,18 @@ public class Product {
     @Column(name = "bio")
     private Boolean bio;
 
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
     public Boolean getBio() {
         return bio;
     }

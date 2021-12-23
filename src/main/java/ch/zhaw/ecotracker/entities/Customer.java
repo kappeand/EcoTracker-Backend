@@ -2,18 +2,15 @@ package ch.zhaw.ecotracker.entities;
 
 import org.hibernate.Hibernate;
 
-import javax.persistence.*;
-import java.util.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "name")
-    private String name;
+public class Customer extends Person {
 
     @Column(name = "co2_rating")
     private String co2rating;
@@ -26,59 +23,6 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", orphanRemoval = true)
     private List<Coupon> coupons = new ArrayList<>();
-
-    @Column(name = "password")
-    private String password;
-
-    @ManyToMany
-    @JoinTable(name = "customer_friends",
-            joinColumns = @JoinColumn(name = "customer_id"),
-            inverseJoinColumns = @JoinColumn(name = "friends_id"))
-    private Set<Customer> friends = new LinkedHashSet<>();
-
-    @ManyToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Set<Customer> getFriends() {
-        return friends;
-    }
-
-    public void setFriends(Set<Customer> customers) {
-        this.friends = customers;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public List<Coupon> getCoupons() {
         return coupons;
