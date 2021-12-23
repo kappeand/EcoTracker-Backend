@@ -19,6 +19,18 @@ public class Supplier {
     @OneToMany(mappedBy = "supplier", orphanRemoval = true)
     private List<Manager> managers = new ArrayList<>();
 
+    @OneToOne(orphanRemoval = true)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     public List<Manager> getManagers() {
         return managers;
     }
