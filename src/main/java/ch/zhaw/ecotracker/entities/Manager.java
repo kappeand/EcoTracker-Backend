@@ -7,6 +7,8 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Manager extends Person {
+
+
     @Column(name = "signature_authorized")
     private Boolean signatureAuthorized;
 
