@@ -1,14 +1,9 @@
 package ch.zhaw.ecotracker.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Address {
-    @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
 
     @Column(name = "street")
     private String street;
@@ -24,6 +19,19 @@ public class Address {
 
     @Column(name = "email")
     private String email;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
@@ -65,11 +73,4 @@ public class Address {
         this.street = street;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }

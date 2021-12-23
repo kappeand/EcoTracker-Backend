@@ -8,6 +8,7 @@ import java.util.Set;
 @Table(name = "purchase")
 public class Purchase {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
