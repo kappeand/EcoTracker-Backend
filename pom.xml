@@ -11,8 +11,8 @@
 	<groupId>ch.zhaw</groupId>
 	<artifactId>EcoTracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EcoTracker</name>
-	<description>EcoTracker</description>
+	<name>EcoTracker-Backend</name>
+	<description>EcoTracker-Backend</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
