@@ -34,6 +34,11 @@ public class SupplierController {
         return new ResponseEntity<>(this.supplierRepository.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "supplier/streetandhousenumber/{street}/{housenumber}")
+    public ResponseEntity<Supplier> readByStreetAndHouseNumber(@PathVariable String street, @PathVariable String housenumber) {
+        return new ResponseEntity<>(this.supplierRepository.findByStreetAndHouseNumber(street, housenumber), HttpStatus.OK);
+    }
+
     @PutMapping(value = "supplier")
     public ResponseEntity<Supplier> update(@RequestBody Supplier newSupplier) {
         if (this.supplierRepository.existsById(newSupplier.getId())) {
@@ -44,7 +49,7 @@ public class SupplierController {
     }
 
     @DeleteMapping(value = "supplier")
-    public ResponseEntity<Supplier  > delete(@RequestParam("id") Long id) {
+    public ResponseEntity<Supplier> delete(@RequestParam("id") Long id) {
         supplierRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -34,6 +34,11 @@ public class ProductController {
         return new ResponseEntity<>(this.productRepository.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "product/name/{name}")
+    public ResponseEntity<List<Product>> readByName(@PathVariable String name) {
+        return new ResponseEntity<>(this.productRepository.findByName(name), HttpStatus.OK);
+    }
+
     @PutMapping(value = "product")
     public ResponseEntity<Product> update(@RequestBody Product newProduct) {
         if (this.productRepository.existsById(newProduct.getId())) {

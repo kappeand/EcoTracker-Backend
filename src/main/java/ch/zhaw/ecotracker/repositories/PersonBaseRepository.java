@@ -11,5 +11,5 @@ import java.util.List;
 public interface PersonBaseRepository<T extends Person> extends JpaRepository<T, Long> {
 
     @Query("select p from #{#entityName} p where p.name = ?1")
-    List<Person> findPersonByName(String name);
+    List<T> findPersonByName(String name);
 }

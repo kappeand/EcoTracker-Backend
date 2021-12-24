@@ -34,6 +34,11 @@ public class CouponController {
         return new ResponseEntity<>(this.couponRepository.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "coupon/customerid/{customerId}")
+    public ResponseEntity<List<Coupon>> readByCustomerId(@PathVariable Long customerId) {
+        return new ResponseEntity<>(this.couponRepository.findByCustomerId(customerId), HttpStatus.OK);
+    }
+
     @PutMapping(value = "coupon")
     public ResponseEntity<Coupon> update(@RequestBody Coupon newCoupon) {
         if (this.couponRepository.existsById(newCoupon.getId())) {

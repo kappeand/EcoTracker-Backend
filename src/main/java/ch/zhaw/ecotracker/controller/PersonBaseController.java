@@ -29,6 +29,11 @@ public class PersonBaseController<T extends Person> {
         return new ResponseEntity<>(this.personBaseRepository.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/name/{name}")
+    public ResponseEntity<List<T>> readByName(@PathVariable String name) {
+        return new ResponseEntity<>(this.personBaseRepository.findPersonByName(name), HttpStatus.OK);
+    }
+
     @PutMapping
     public ResponseEntity<T> update(@RequestBody T newPerson) {
         if (this.personBaseRepository.existsById(newPerson.getId())) {

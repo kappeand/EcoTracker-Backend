@@ -34,6 +34,11 @@ public class AddressController {
         return new ResponseEntity<>(this.addressRepository.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "address/street/{street}")
+    public ResponseEntity<List<Address>> readByStreet(@PathVariable String street) {
+        return new ResponseEntity<>(this.addressRepository.findByStreet(street), HttpStatus.OK);
+    }
+
     @PutMapping(value = "address")
     public ResponseEntity<Address> update(@RequestBody Address newAddress) {
         if (this.addressRepository.existsById(newAddress.getId())) {

@@ -34,6 +34,11 @@ public class PurchaseController {
         return new ResponseEntity<>(this.purchaseRepository.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "purchase/{customerId}")
+    public ResponseEntity<List<Purchase>> readByCustomerId(@PathVariable Long customerId) {
+        return new ResponseEntity<>(this.purchaseRepository.findByCustomerId(customerId), HttpStatus.OK);
+    }
+
     @PutMapping(value = "purchase")
     public ResponseEntity<Purchase> update(@RequestBody Purchase newPurchase) {
         if (this.purchaseRepository.existsById(newPurchase.getId())) {
