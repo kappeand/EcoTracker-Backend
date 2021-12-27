@@ -13,5 +13,3 @@ public class ManagerController extends PersonBaseController<Manager> {
         super.personBaseRepository = personBaseRepository;
     }
 }
-
-//Todo: exception handling
