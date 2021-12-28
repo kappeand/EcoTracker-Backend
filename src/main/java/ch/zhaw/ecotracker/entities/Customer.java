@@ -16,7 +16,7 @@ public class Customer extends Person {
     private String co2rating;
 
     @Column(name = "cumulus_number")
-    private Integer cumulusNumber;
+    private String cumulusNumber;
 
     @OneToMany(mappedBy = "customer", orphanRemoval = true)
     private List<Purchase> purchases = new ArrayList<>();
@@ -40,11 +40,11 @@ public class Customer extends Person {
         this.purchases = purchases;
     }
 
-    public Integer getCumulusNumber() {
+    public String getCumulusNumber() {
         return cumulusNumber;
     }
 
-    public void setCumulusNumber(Integer cumulusNumber) {
+    public void setCumulusNumber(String cumulusNumber) {
         this.cumulusNumber = cumulusNumber;
     }
 
