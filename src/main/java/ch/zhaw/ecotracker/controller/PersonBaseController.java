@@ -24,6 +24,6 @@ public class PersonBaseController<T extends Person> extends BaseController<T> {
 
     @GetMapping(value = "/name/{name}")
     public ResponseEntity<List<T>> readByName(@PathVariable String name) {
-        return new ResponseEntity<>(this.personBaseRepository.findPersonByName(name), HttpStatus.OK);
+        return new ResponseEntity<>(this.personBaseRepository.findByName(name), HttpStatus.OK);
     }
 }
