@@ -24,7 +24,7 @@ public class ProductController extends BaseController<Product> {
     }
 
     @GetMapping(value = "/name/{name}")
-    public ResponseEntity<List<Product>> readByName(@PathVariable String name) {
+    public ResponseEntity<List<Product>> readByName(@PathVariable String name) { //TODO: redundant with PersonBaseController
         return new ResponseEntity<>(this.productRepository.findByName(name), HttpStatus.OK);
     }
 }

@@ -14,7 +14,7 @@ public class Product {
     private Long id;
 
     @Column(name = "co2_emission")
-    private Integer co2emission;
+    private Double co2emission;
 
     @Column(name = "name")
     private String name;
@@ -72,11 +72,11 @@ public class Product {
         this.name = name;
     }
 
-    public Integer getCo2emission() {
+    public Double getCo2emission() {
         return co2emission;
     }
 
-    public void setCo2emission(Integer co2emission) {
+    public void setCo2emission(Double co2emission) {
         this.co2emission = co2emission;
     }
 
