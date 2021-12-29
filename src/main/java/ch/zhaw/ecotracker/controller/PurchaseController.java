@@ -23,7 +23,7 @@ public class PurchaseController extends BaseController<Purchase> {
         this.purchaseRepository = purchaseRepository;
     }
 
-    @GetMapping(value = "/{customerId}")
+    @GetMapping(value = "/customer/{customerId}")
     public ResponseEntity<List<Purchase>> readByCustomerId(@PathVariable Long customerId) {
         return new ResponseEntity<>(this.purchaseRepository.findByCustomerId(customerId), HttpStatus.OK);
     }
