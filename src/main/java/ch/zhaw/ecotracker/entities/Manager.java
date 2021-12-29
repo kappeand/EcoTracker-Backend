@@ -16,7 +16,7 @@ public class Manager extends Person {
     @Column(name = "contact_person")
     private Boolean contactPerson;
 
-    @JsonIgnoreProperties(value = "managers")
+    @JsonIgnoreProperties(value = {"managers", "products"})
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;

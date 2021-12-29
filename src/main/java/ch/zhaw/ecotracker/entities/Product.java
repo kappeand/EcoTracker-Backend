@@ -29,7 +29,7 @@ public class Product {
     @Column(name = "bio")
     private Boolean bio;
 
-    @JsonIgnoreProperties(value = "products")
+    @JsonIgnoreProperties(value = {"products", "managers"})
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;

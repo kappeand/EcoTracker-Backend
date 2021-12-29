@@ -1,5 +1,6 @@
 package ch.zhaw.ecotracker.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
@@ -18,19 +19,13 @@ public class Customer extends Person {
     @Column(name = "cumulus_number")
     private String cumulusNumber;
 
-    @OneToMany(mappedBy = "customer", orphanRemoval = true)
-    private List<Purchase> purchases = new ArrayList<>();
-
+    @JsonIgnoreProperties(value = {"customer"})
     @OneToMany(mappedBy = "customer", orphanRemoval = true)
     private List<Coupon> coupons = new ArrayList<>();
 
-    public List<Coupon> getCoupons() {
-        return coupons;
-    }
-
-    public void setCoupons(List<Coupon> coupons) {
-        this.coupons = coupons;
-    }
+    @JsonIgnoreProperties(value = {"customer"})
+    @OneToMany(mappedBy = "customer", orphanRemoval = true)
+    private List<Purchase> purchases = new ArrayList<>();
 
     public List<Purchase> getPurchases() {
         return purchases;
@@ -38,6 +33,14 @@ public class Customer extends Person {
 
     public void setPurchases(List<Purchase> purchases) {
         this.purchases = purchases;
+    }
+
+    public List<Coupon> getCoupons() {
+        return coupons;
+    }
+
+    public void setCoupons(List<Coupon> coupons) {
+        this.coupons = coupons;
     }
 
     public String getCumulusNumber() {

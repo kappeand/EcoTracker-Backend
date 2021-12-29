@@ -14,13 +14,14 @@ public class Purchase {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @JsonIgnoreProperties(value = {"supplier"})
     @ManyToMany
     @JoinTable(name = "purchase_products",
             joinColumns = @JoinColumn(name = "purchase_id"),
             inverseJoinColumns = @JoinColumn(name = "products_id"))
     private Set<Product> products = new LinkedHashSet<>();
 
-    @JsonIgnoreProperties(value = "purchases")
+    @JsonIgnoreProperties(value = {"purchases", "coupons"})
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;

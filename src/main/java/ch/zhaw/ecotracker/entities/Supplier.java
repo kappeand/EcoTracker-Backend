@@ -1,5 +1,7 @@
 package ch.zhaw.ecotracker.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -13,9 +15,11 @@ public class Supplier {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @JsonIgnoreProperties(value = {"supplier"})
     @OneToMany(mappedBy = "supplier")
     private Set<Product> products = new LinkedHashSet<>();
 
+    @JsonIgnoreProperties(value = {"supplier"})
     @OneToMany(mappedBy = "supplier", orphanRemoval = true)
     private List<Manager> managers = new ArrayList<>();
 

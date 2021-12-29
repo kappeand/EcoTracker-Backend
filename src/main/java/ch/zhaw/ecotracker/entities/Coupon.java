@@ -14,7 +14,7 @@ public class Coupon {
     @Column(name = "monetary_value")
     private Double monetaryValue;
 
-    @JsonIgnoreProperties(value = "coupons")
+    @JsonIgnoreProperties(value = {"coupons", "purchases"})
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;

@@ -4,6 +4,10 @@ import javax.persistence.*;
 
 @Entity
 public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column(name = "street")
     private String street;
@@ -20,10 +24,6 @@ public class Address {
     @Column(name = "email")
     private String email;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
 
     public Long getId() {
         return id;
