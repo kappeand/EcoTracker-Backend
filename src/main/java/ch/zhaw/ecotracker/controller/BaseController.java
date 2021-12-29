@@ -27,8 +27,8 @@ public class BaseController<T> {
         return new ResponseEntity<>(this.baseRepository.findAll(), HttpStatus.OK);
     }
 
-    @PutMapping
-    public ResponseEntity<T> update(@RequestBody Long id, T newEntity) {
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<T> update(@PathVariable Long id, @RequestBody T newEntity) {
         if (this.baseRepository.existsById(id)) {
             return new ResponseEntity<>(this.baseRepository.save(newEntity), HttpStatus.OK);
         } else {
