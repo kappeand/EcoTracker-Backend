@@ -15,7 +15,7 @@ public class BaseController<T> {
         return new ResponseEntity<>(this.baseRepository.save(entity), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "/{id}")
     public ResponseEntity<T> readById(@PathVariable Long id) {
         return this.baseRepository.findById(id)
                 .map(entity -> new ResponseEntity<>(entity, HttpStatus.OK))
