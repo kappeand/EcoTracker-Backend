@@ -1,6 +1,6 @@
 package ch.zhaw.ecotracker.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,8 +16,7 @@ public class Manager extends Person {
     @Column(name = "contact_person")
     private Boolean contactPerson;
 
-    //Fixme: needed? maybe change?
-    @JsonIgnore
+    @JsonIgnoreProperties(value = "managers")
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;

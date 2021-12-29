@@ -1,6 +1,6 @@
 package ch.zhaw.ecotracker.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.LinkedHashSet;
@@ -20,8 +20,7 @@ public class Purchase {
             inverseJoinColumns = @JoinColumn(name = "products_id"))
     private Set<Product> products = new LinkedHashSet<>();
 
-    //Fixme: needed? maybe change?
-    @JsonIgnore
+    @JsonIgnoreProperties(value = "purchases")
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;

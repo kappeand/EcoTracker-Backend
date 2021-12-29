@@ -1,6 +1,6 @@
 package ch.zhaw.ecotracker.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -29,8 +29,7 @@ public class Product {
     @Column(name = "bio")
     private Boolean bio;
 
-    //Fixme: needed? maybe change?
-    @JsonIgnore
+    @JsonIgnoreProperties(value = "products")
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
