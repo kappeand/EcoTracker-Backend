@@ -1,5 +1,7 @@
 package ch.zhaw.ecotracker.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,8 @@ public class Coupon {
     @Column(name = "monetary_value")
     private Double monetaryValue;
 
+    //Fixme: needed? maybe change?
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;

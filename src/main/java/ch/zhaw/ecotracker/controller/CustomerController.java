@@ -13,3 +13,4 @@ public class CustomerController extends PersonBaseController<Customer> {
         super.personBaseRepository = personBaseRepository;
     }
 }
+

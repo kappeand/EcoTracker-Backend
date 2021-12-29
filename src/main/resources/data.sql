@@ -1095,6 +1095,7 @@ values (true, 3.71, 'China', 'Balsalazide Disodium', 2.8, 5);
 insert into product (bio, co2_emission, country_of_origin, name, price, supplier_id)
 values (false, 5.97, 'China', 'Homeopathic Ear Pain Relief', 11.2, 13);
 
+/*
 insert into purchase_products (purchase_id, products_id)
 values (120, 7);
 insert into purchase_products (purchase_id, products_id)
@@ -1695,3 +1696,4 @@ insert into purchase_products (purchase_id, products_id)
 values (41, 1);
 insert into purchase_products (purchase_id, products_id)
 values (49, 28);
+*/
