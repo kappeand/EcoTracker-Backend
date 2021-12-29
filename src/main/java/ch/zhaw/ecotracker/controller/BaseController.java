@@ -36,8 +36,8 @@ public class BaseController<T> {
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<T> delete(@RequestParam("id") Long id) {
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<T> delete(@PathVariable Long id) {
         baseRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
