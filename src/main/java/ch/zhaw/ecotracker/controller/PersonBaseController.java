@@ -15,11 +15,8 @@ public class PersonBaseController<T extends Person> extends BaseController<T> {
     protected PersonBaseRepository<T> personBaseRepository;
 
     public PersonBaseController(BaseRepository<T> baseRepository, PersonBaseRepository<T> personBaseRepository) {
-        super.baseRepository = baseRepository;
+        super(baseRepository);
         this.personBaseRepository = personBaseRepository;
-    }
-
-    public PersonBaseController() {
     }
 
     @GetMapping(value = "/name/{name}")

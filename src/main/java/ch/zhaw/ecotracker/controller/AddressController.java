@@ -18,7 +18,7 @@ public class AddressController extends BaseController<Address> {
     private final AddressRepository addressRepository;
 
     public AddressController(BaseRepository<Address> baseRepository, AddressRepository addressRepository) {
-        super.baseRepository = baseRepository;
+        super(baseRepository);
         this.addressRepository = addressRepository;
     }
 

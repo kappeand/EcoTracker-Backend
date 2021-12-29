@@ -19,7 +19,7 @@ public class CouponController extends BaseController<Coupon> {
     private final CouponRepository couponRepository;
 
     public CouponController(BaseRepository<Coupon> baseRepository, CouponRepository couponRepository) {
-        super.baseRepository = baseRepository;
+        super(baseRepository);
         this.couponRepository = couponRepository;
     }
 

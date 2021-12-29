@@ -19,7 +19,7 @@ public class ProductController extends BaseController<Product> {
     private final ProductRepository productRepository;
 
     public ProductController(BaseRepository<Product> baseRepository, ProductRepository productRepository) {
-        super.baseRepository = baseRepository;
+        super(baseRepository);
         this.productRepository = productRepository;
     }
 

@@ -19,7 +19,7 @@ public class PurchaseController extends BaseController<Purchase> {
     private final PurchaseRepository purchaseRepository;
 
     public PurchaseController(BaseRepository<Purchase> baseRepository, PurchaseRepository purchaseRepository) {
-        super.baseRepository = baseRepository;
+        super(baseRepository);
         this.purchaseRepository = purchaseRepository;
     }
 

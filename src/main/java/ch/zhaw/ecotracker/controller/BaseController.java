@@ -10,6 +10,10 @@ import java.util.List;
 public class BaseController<T> {
     protected BaseRepository<T> baseRepository;
 
+    public BaseController(BaseRepository<T> baseRepository) {
+        this.baseRepository = baseRepository;
+    }
+
     @PostMapping
     public ResponseEntity<T> create(@RequestBody T entity) {
         return new ResponseEntity<>(this.baseRepository.save(entity), HttpStatus.OK);

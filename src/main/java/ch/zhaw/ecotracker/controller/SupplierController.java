@@ -17,7 +17,7 @@ public class SupplierController extends BaseController<Supplier> {
     private final SupplierRepository supplierRepository;
 
     public SupplierController(BaseRepository<Supplier> baseRepository, SupplierRepository supplierRepository) {
-        super.baseRepository = baseRepository;
+        super(baseRepository);
         this.supplierRepository = supplierRepository;
     }
 
