@@ -1095,7 +1095,6 @@ values (true, 3.71, 'China', 'Balsalazide Disodium', 2.8, 5);
 insert into product (bio, co2_emission, country_of_origin, name, price, supplier_id)
 values (false, 5.97, 'China', 'Homeopathic Ear Pain Relief', 11.2, 13);
 
-/*
 insert into purchase_products (purchase_id, products_id)
 values (120, 7);
 insert into purchase_products (purchase_id, products_id)
@@ -1167,7 +1166,7 @@ values (132, 17);
 insert into purchase_products (purchase_id, products_id)
 values (49, 24);
 insert into purchase_products (purchase_id, products_id)
-values (133, 8);
+values (133, 17);
 insert into purchase_products (purchase_id, products_id)
 values (108, 14);
 insert into purchase_products (purchase_id, products_id)
@@ -1189,7 +1188,7 @@ values (50, 7);
 insert into purchase_products (purchase_id, products_id)
 values (84, 17);
 insert into purchase_products (purchase_id, products_id)
-values (2, 3);
+values (2, 10);
 insert into purchase_products (purchase_id, products_id)
 values (23, 24);
 insert into purchase_products (purchase_id, products_id)
@@ -1205,7 +1204,7 @@ values (88, 19);
 insert into purchase_products (purchase_id, products_id)
 values (35, 6);
 insert into purchase_products (purchase_id, products_id)
-values (43, 19);
+values (43, 25);
 insert into purchase_products (purchase_id, products_id)
 values (19, 7);
 insert into purchase_products (purchase_id, products_id)
@@ -1303,7 +1302,7 @@ values (103, 24);
 insert into purchase_products (purchase_id, products_id)
 values (74, 2);
 insert into purchase_products (purchase_id, products_id)
-values (111, 20);
+values (111, 21);
 insert into purchase_products (purchase_id, products_id)
 values (150, 8);
 insert into purchase_products (purchase_id, products_id)
@@ -1355,7 +1354,7 @@ values (2, 3);
 insert into purchase_products (purchase_id, products_id)
 values (139, 13);
 insert into purchase_products (purchase_id, products_id)
-values (43, 6);
+values (43, 21);
 insert into purchase_products (purchase_id, products_id)
 values (137, 16);
 insert into purchase_products (purchase_id, products_id)
@@ -1451,7 +1450,7 @@ values (87, 16);
 insert into purchase_products (purchase_id, products_id)
 values (95, 29);
 insert into purchase_products (purchase_id, products_id)
-values (46, 4);
+values (46, 28);
 insert into purchase_products (purchase_id, products_id)
 values (21, 8);
 insert into purchase_products (purchase_id, products_id)
@@ -1467,7 +1466,7 @@ values (135, 2);
 insert into purchase_products (purchase_id, products_id)
 values (7, 5);
 insert into purchase_products (purchase_id, products_id)
-values (76, 7);
+values (76, 1);
 insert into purchase_products (purchase_id, products_id)
 values (4, 29);
 insert into purchase_products (purchase_id, products_id)
@@ -1487,13 +1486,13 @@ values (135, 29);
 insert into purchase_products (purchase_id, products_id)
 values (129, 29);
 insert into purchase_products (purchase_id, products_id)
-values (36, 3);
+values (36, 11);
 insert into purchase_products (purchase_id, products_id)
 values (2, 26);
 insert into purchase_products (purchase_id, products_id)
 values (8, 3);
 insert into purchase_products (purchase_id, products_id)
-values (118, 4);
+values (118, 3);
 insert into purchase_products (purchase_id, products_id)
 values (76, 17);
 insert into purchase_products (purchase_id, products_id)
@@ -1696,4 +1695,3 @@ insert into purchase_products (purchase_id, products_id)
 values (41, 1);
 insert into purchase_products (purchase_id, products_id)
 values (49, 28);
-*/
