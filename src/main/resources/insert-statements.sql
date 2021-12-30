@@ -149,35 +149,35 @@ values ('jcuddehay21@odnoklassniki.ru', 105, '4477826720', '4342', 'Sundown');
 insert into address (email, house_number, phone_number, postal_code, street)
 values ('bdrivers22@china.com.cn', 122, '8651213400', '37939', 'Warbler');
 
-insert into supplier (adress_id, name)  
+insert into supplier (address_id, name)
 values (54, 'Fivechat');
-insert into supplier (adress_id, name)  
+insert into supplier (address_id, name)
 values (73, 'Fatz');
-insert into supplier (adress_id, name)  
+insert into supplier (address_id, name)
 values (40, 'Rhybox');
-insert into supplier (adress_id, name)  
+insert into supplier (address_id, name)
 values (32, 'Kayveo');
-insert into supplier (adress_id, name)  
+insert into supplier (address_id, name)
 values (1, 'Browseblab');
-insert into supplier (adress_id, name)  
+insert into supplier (address_id, name)
 values (63, 'Innojam');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (19, 'Oodoo');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (69, 'Jabberstorm');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (24, 'Oodoo');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (9, 'Gigabox');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (36, 'Trunyx');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (56, 'Kimia');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (8, 'Ainyx');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (67, 'Myworks');
-insert into supplier (adress_id, name) 
+insert into supplier (address_id, name)
 values (9, 'Oyondu');
 
 insert into manager (name, contact_person, signature_authorized, address_id, supplier_id)
