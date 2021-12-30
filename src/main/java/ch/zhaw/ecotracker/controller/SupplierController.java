@@ -21,7 +21,7 @@ public class SupplierController extends BaseController<Supplier> {
         this.supplierRepository = supplierRepository;
     }
 
-    @GetMapping(value = "/streetandhousenumber/{street}/{housenumber}")
+    @GetMapping(value = "/streetAndHouseNumber/{street}/{housenumber}")
     public ResponseEntity<Supplier> readByStreetAndHouseNumber(@PathVariable String street, @PathVariable String housenumber) {
         return new ResponseEntity<>(this.supplierRepository.findByStreetAndHouseNumber(street, housenumber), HttpStatus.OK);
     }

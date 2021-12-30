@@ -23,7 +23,7 @@ public class CouponController extends BaseController<Coupon> {
         this.couponRepository = couponRepository;
     }
 
-    @GetMapping(value = "/customerid/{customerId}")
+    @GetMapping(value = "/customerId/{customerId}")
     public ResponseEntity<List<Coupon>> readByCustomerId(@PathVariable Long customerId) {
         return new ResponseEntity<>(this.couponRepository.findByCustomerId(customerId), HttpStatus.OK);
     }
