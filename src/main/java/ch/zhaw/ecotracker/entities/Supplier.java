@@ -27,6 +27,17 @@ public class Supplier {
     @JoinColumn(name = "address_id")
     private Address address;
 
+    @Column(name = "name")
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Address getAddress() {
         return address;
     }
