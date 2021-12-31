@@ -22,6 +22,7 @@ public class Customer extends Person {
     @JsonIgnoreProperties(value = {"customer"})
     @OneToMany(mappedBy = "customer", orphanRemoval = true)
     private List<Coupon> coupons = new ArrayList<>();
+
     @JsonIgnoreProperties(value = {"customer"})
     @OneToMany(mappedBy = "customer", orphanRemoval = true)
     private List<Purchase> purchases = new ArrayList<>();
@@ -31,8 +32,8 @@ public class Customer extends Person {
         return "Customer{" +
                 "co2rating='" + co2rating + '\'' +
                 ", cumulusNumber='" + cumulusNumber + '\'' +
-                ", coupons=" + coupons +
-                ", purchases=" + purchases +
+                ", coupons=" + coupons.size() +
+                ", purchases=" + purchases.size() +
                 '}';
     }
 

@@ -14,6 +14,14 @@ public class Coupon {
     @Column(name = "monetary_value")
     private Double monetaryValue;
 
+    @JsonIgnoreProperties(value = {"coupons", "purchases"})
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+    
+    @Column(name = "redeemed")
+    private Boolean redeemed;
+
     @Override
     public String toString() {
         return "Coupon{" +
@@ -23,14 +31,6 @@ public class Coupon {
                 ", redeemed=" + redeemed +
                 '}';
     }
-
-    @JsonIgnoreProperties(value = {"coupons", "purchases"})
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-
-    @Column(name = "redeemed")
-    private Boolean redeemed;
 
     public Boolean getRedeemed() {
         return redeemed;

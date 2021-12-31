@@ -29,6 +29,11 @@ public class Product {
     @Column(name = "bio")
     private Boolean bio;
 
+    @JsonIgnoreProperties(value = {"products", "managers"})
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
+
     @Override
     public String toString() {
         return "Product{" +
@@ -41,11 +46,6 @@ public class Product {
                 ", supplier=" + supplier +
                 '}';
     }
-
-    @JsonIgnoreProperties(value = {"products", "managers"})
-    @ManyToOne
-    @JoinColumn(name = "supplier_id")
-    private Supplier supplier;
 
     public Supplier getSupplier() {
         return supplier;

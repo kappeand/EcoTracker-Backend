@@ -34,8 +34,8 @@ public class Supplier {
     public String toString() {
         return "Supplier{" +
                 "id=" + id +
-                ", products=" + products +
-                ", managers=" + managers +
+                ", products=" + products.size() +
+                ", managers=" + managers.size() +
                 ", address=" + address +
                 ", name='" + name + '\'' +
                 '}';

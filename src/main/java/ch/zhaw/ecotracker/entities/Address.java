@@ -18,6 +18,12 @@ public class Address {
     @Column(name = "postal_code")
     private String postalCode;
 
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "email")
+    private String email;
+
     @Override
     public String toString() {
         return "Address{" +
@@ -29,13 +35,6 @@ public class Address {
                 ", email='" + email + '\'' +
                 '}';
     }
-
-    @Column(name = "phone_number")
-    private String phoneNumber;
-
-    @Column(name = "email")
-    private String email;
-
 
     public Long getId() {
         return id;
