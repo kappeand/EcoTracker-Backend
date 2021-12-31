@@ -14,6 +14,16 @@ public class Coupon {
     @Column(name = "monetary_value")
     private Double monetaryValue;
 
+    @Override
+    public String toString() {
+        return "Coupon{" +
+                "id=" + id +
+                ", monetaryValue=" + monetaryValue +
+                ", customer=" + customer +
+                ", redeemed=" + redeemed +
+                '}';
+    }
+
     @JsonIgnoreProperties(value = {"coupons", "purchases"})
     @ManyToOne
     @JoinColumn(name = "customer_id")

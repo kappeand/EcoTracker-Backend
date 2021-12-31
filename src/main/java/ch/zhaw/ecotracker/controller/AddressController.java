@@ -24,6 +24,13 @@ public class AddressController extends BaseController<Address> {
 
     @GetMapping(value = "/street/{street}")
     public ResponseEntity<List<Address>> readByStreet(@PathVariable String street) {
-        return new ResponseEntity<>(this.addressRepository.findByStreet(street), HttpStatus.OK);
+        try {
+            List<Address> readAddresses = this.addressRepository.findByStreet(street);
+            super.logger.info("Read " + readAddresses.size() + " addresses by street [" + street + "]");
+            return new ResponseEntity<>(readAddresses, HttpStatus.OK);
+        } catch (Exception e) {
+            super.logger.severe("Failed to read address by street [" + street + "]");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

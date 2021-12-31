@@ -16,6 +16,15 @@ public class Manager extends Person {
     @Column(name = "contact_person")
     private Boolean contactPerson;
 
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "signatureAuthorized=" + signatureAuthorized +
+                ", contactPerson=" + contactPerson +
+                ", supplier=" + supplier +
+                '}';
+    }
+
     @JsonIgnoreProperties(value = {"managers", "products"})
     @ManyToOne
     @JoinColumn(name = "supplier_id")

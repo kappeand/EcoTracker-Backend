@@ -21,8 +21,15 @@ public class SupplierController extends BaseController<Supplier> {
         this.supplierRepository = supplierRepository;
     }
 
-    @GetMapping(value = "/streetAndHouseNumber/{street}/{housenumber}")
-    public ResponseEntity<Supplier> readByStreetAndHouseNumber(@PathVariable String street, @PathVariable String housenumber) {
-        return new ResponseEntity<>(this.supplierRepository.findByStreetAndHouseNumber(street, housenumber), HttpStatus.OK);
+    @GetMapping(value = "/streetAndHouseNumber/{street}/{houseNumber}")
+    public ResponseEntity<Supplier> readByStreetAndHouseNumber(@PathVariable String street, @PathVariable String houseNumber) {
+        try {
+            Supplier readSupplier = this.supplierRepository.findByStreetAndHouseNumber(street, houseNumber);
+            super.logger.info("Read " + readSupplier + " by street [" + street + "] and houseNumber [" + houseNumber + "]");
+            return new ResponseEntity<>(readSupplier, HttpStatus.OK);
+        } catch (Exception e) {
+            super.logger.severe("Failed to read suppliers by street [" + street + "] and houseNumber [" + houseNumber + "]");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

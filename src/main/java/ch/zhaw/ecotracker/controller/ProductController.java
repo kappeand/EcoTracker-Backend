@@ -25,6 +25,13 @@ public class ProductController extends BaseController<Product> {
 
     @GetMapping(value = "/name/{name}")
     public ResponseEntity<List<Product>> readByName(@PathVariable String name) { //TODO: redundant with PersonBaseController
-        return new ResponseEntity<>(this.productRepository.findByName(name), HttpStatus.OK);
+        try {
+            List<Product> readProducts = this.productRepository.findByName(name);
+            super.logger.info("Read " + readProducts.size() + " products by name [" + name + "]");
+            return new ResponseEntity<>(readProducts, HttpStatus.OK);
+        } catch (Exception e) {
+            super.logger.severe("Failed to read products by name [" + name + "]");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

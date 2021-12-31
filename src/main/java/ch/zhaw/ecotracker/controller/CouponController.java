@@ -25,6 +25,13 @@ public class CouponController extends BaseController<Coupon> {
 
     @GetMapping(value = "/customerId/{customerId}")
     public ResponseEntity<List<Coupon>> readByCustomerId(@PathVariable Long customerId) {
-        return new ResponseEntity<>(this.couponRepository.findByCustomerId(customerId), HttpStatus.OK);
+        try {
+            List<Coupon> readCustomers = this.couponRepository.findByCustomerId(customerId);
+            super.logger.info("Read " + readCustomers.size() + " by customerId [" + customerId + "]");
+            return new ResponseEntity<>(readCustomers, HttpStatus.OK);
+        } catch (Exception e) {
+            super.logger.severe("Failed to read coupons by customerId [" + customerId + "]");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

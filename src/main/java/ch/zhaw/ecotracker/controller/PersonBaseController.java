@@ -21,6 +21,13 @@ public class PersonBaseController<T extends Person> extends BaseController<T> {
 
     @GetMapping(value = "/name/{name}")
     public ResponseEntity<List<T>> readByName(@PathVariable String name) {
-        return new ResponseEntity<>(this.personBaseRepository.findByName(name), HttpStatus.OK);
+        try {
+            List<T> readPerson = this.personBaseRepository.findByName(name);
+            super.logger.info("Read " + readPerson.size() + " " + super.entityName + " by name [" + name + "]");
+            return new ResponseEntity<>(readPerson, HttpStatus.OK);
+        } catch (Exception e) {
+            super.logger.severe("Failed to read " + super.entityName + " by name [" + name + "]");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

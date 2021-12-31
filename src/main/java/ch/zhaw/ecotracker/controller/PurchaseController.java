@@ -25,6 +25,13 @@ public class PurchaseController extends BaseController<Purchase> {
 
     @GetMapping(value = "/customerId/{customerId}")
     public ResponseEntity<List<Purchase>> readByCustomerId(@PathVariable Long customerId) {
-        return new ResponseEntity<>(this.purchaseRepository.findByCustomerId(customerId), HttpStatus.OK);
+        try {
+            List<Purchase> readPurchases = this.purchaseRepository.findByCustomerId(customerId);
+            super.logger.info("Read " + readPurchases.size() + " purchases by customerId [" + customerId + "]");
+            return new ResponseEntity<>(readPurchases, HttpStatus.OK);
+        } catch (Exception e) {
+            super.logger.severe("Failed to read purchases by customerId [" + customerId + "]");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

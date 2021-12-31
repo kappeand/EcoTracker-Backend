@@ -30,6 +30,17 @@ public class Supplier {
     @Column(name = "name")
     private String name;
 
+    @Override
+    public String toString() {
+        return "Supplier{" +
+                "id=" + id +
+                ", products=" + products +
+                ", managers=" + managers +
+                ", address=" + address +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

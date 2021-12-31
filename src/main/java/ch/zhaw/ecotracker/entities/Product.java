@@ -29,6 +29,19 @@ public class Product {
     @Column(name = "bio")
     private Boolean bio;
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", co2emission=" + co2emission +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", countryOfOrigin='" + countryOfOrigin + '\'' +
+                ", bio=" + bio +
+                ", supplier=" + supplier +
+                '}';
+    }
+
     @JsonIgnoreProperties(value = {"products", "managers"})
     @ManyToOne
     @JoinColumn(name = "supplier_id")

@@ -18,6 +18,18 @@ public class Address {
     @Column(name = "postal_code")
     private String postalCode;
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", street='" + street + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     @Column(name = "phone_number")
     private String phoneNumber;
 

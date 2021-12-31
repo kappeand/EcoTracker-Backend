@@ -14,6 +14,15 @@ public class Purchase {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Override
+    public String toString() {
+        return "Purchase{" +
+                "id=" + id +
+                ", products=" + products +
+                ", customer=" + customer +
+                '}';
+    }
+
     @JsonIgnoreProperties(value = {"supplier"})
     @ManyToMany
     @JoinTable(name = "purchase_products",
