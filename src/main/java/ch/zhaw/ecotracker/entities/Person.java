@@ -8,13 +8,18 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     @Column(name = "name")
     private String name;
-
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
+
+    @Override
+    public String toString() {
+        return "id=" + id +
+                ", name='" + name +
+                ", address=" + address;
+    }
 
     public String getName() {
         return name;

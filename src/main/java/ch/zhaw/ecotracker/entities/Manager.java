@@ -24,7 +24,8 @@ public class Manager extends Person {
     @Override
     public String toString() {
         return "Manager{" +
-                "signatureAuthorized=" + signatureAuthorized +
+                super.toString() +
+                ", signatureAuthorized=" + signatureAuthorized +
                 ", contactPerson=" + contactPerson +
                 ", supplier=" + supplier +
                 '}';

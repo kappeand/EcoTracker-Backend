@@ -30,8 +30,9 @@ public class Customer extends Person {
     @Override
     public String toString() {
         return "Customer{" +
-                "co2rating='" + co2rating + '\'' +
-                ", cumulusNumber='" + cumulusNumber + '\'' +
+                super.toString() +
+                ", co2rating='" + co2rating +
+                ", cumulusNumber='" + cumulusNumber +
                 ", coupons=" + coupons.size() +
                 ", purchases=" + purchases.size() +
                 '}';
